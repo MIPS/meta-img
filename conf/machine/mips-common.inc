@@ -5,3 +5,6 @@ KERNEL_ALT_IMAGETYPE = "vmlinux.bin"
 
 SERIAL_CONSOLES = "115200;ttyS0 115200;ttyS1"
 
+# This disables gobject-introspection which needs fixing for some
+# targets. If you need to use that package, remove this line.
+MACHINE_FEATURES_BACKFILL_CONSIDERED = "qemu-usermode"
