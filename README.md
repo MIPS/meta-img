@@ -7,9 +7,9 @@ This is a BSP layer for MIPS based hardware platforms and QEMU targets usable wi
 
 ## Supported Machines
 
-### qemu32/64/r2/el/nf 
+### qemu32/64/r2/r6/el/nf
 
-Multiple configurations of QEMU machines in 32/64 bit, r2, little/big endian, with/without fpu.
+Multiple configurations of QEMU machines in 32/64 bit, r2/r6, little/big endian, with/without fpu.
 
 ### Creator Ci40
 
