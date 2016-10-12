@@ -29,7 +29,7 @@ https://community.imgtec.com/university/resources/
 
 [Building Machines](README.building.md)	Notes on how to build various machines
 
-<TODO [Booting Machines](README.booting.md)	Notes on how to boot the various machines such as Ci40, xilfpga>
+[Booting Machines](README.booting.md)	Notes on how to boot the various machines such as Ci40, xilfpga
 
 [Using QEMU](README.qemu.md)		Notes on how to use qemu with the various configurations
 
