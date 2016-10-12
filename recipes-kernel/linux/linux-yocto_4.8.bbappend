@@ -4,7 +4,6 @@ PR := "${PR}.1"
 
 SRC_URI += "file://modules.cfg \
 	    file://tracepoints.cfg \
-	    file://MIPS-Remove-compact-branch-policy-Kconfig-entries.patch	\
 	   "
 
 # replace these SRCREVs with the real commit ids once you've had
