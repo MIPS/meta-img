@@ -31,6 +31,12 @@ The MIPSfpga package you have will already have instructions on how to load the 
 
 Please follow those same instructions but using the files generated in tmp/deploy/images/xilfpga/*
 
+## UTM8
+
+Pause u-boot in the stage 3 bootloader and tftpboot the generated kernel.
+
+The rootfs can be on nfs or a SATA hdd if connected.
+
 ## QEMU
 
 

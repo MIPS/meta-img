@@ -118,3 +118,10 @@ KBUILD_DEFCONFIG_qemumips64r6el		= "malta_defconfig"
 KBUILD_DEFCONFIG_qemumips64r6el-nf	= "malta_defconfig"
 SRC_URI_append_qemumips64r6el		+= "file://mips64r6el.cfg"
 SRC_URI_append_qemumips64r6el-nf	+= "file://mips64r6el.cfg"
+
+# utm8
+COMPATIBLE_MACHINE_utm8el	= "utm8el"
+COMPATIBLE_MACHINE_utm8		= "utm8"
+KBUILD_DEFCONFIG_utm8el		= "cavium_octeon_defconfig"
+KBUILD_DEFCONFIG_utm8		= "cavium_octeon_defconfig"
+SRC_URI_append_utm8el		+= "file://mips64r2el.cfg"

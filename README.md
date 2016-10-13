@@ -23,13 +23,19 @@ https://www.kernel.org/doc/Documentation/devicetree/bindings/mips/img/xilfpga.tx
 
 https://community.imgtec.com/university/resources/
 
+### UTM8
+
+Router based around Cavium 7130 SoC by Rhino Labs.
+
+For more information, check http://www.rhinolabsinc.com/category/network-appliances/
+
 ---
 
 ### Additional documentation
 
 [Building Machines](README.building.md)	Notes on how to build various machines
 
-[Booting Machines](README.booting.md)	Notes on how to boot the various machines such as Ci40, xilfpga
+[Booting Machines](README.booting.md)	Notes on how to boot the various machines such as Ci40, xilfpga etc.
 
 [Using QEMU](README.qemu.md)		Notes on how to use qemu with the various configurations
 
