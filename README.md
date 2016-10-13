@@ -29,6 +29,12 @@ Router based around Cavium 7130 SoC by Rhino Labs.
 
 For more information, check http://www.rhinolabsinc.com/category/network-appliances/
 
+### SEAD3
+
+Development platform for M-class cores.
+
+For more information, see https://community.imgtec.com/developers/mips/resources/development-platforms/sead-3-development-boards/
+
 ---
 
 ### Additional documentation

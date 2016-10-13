@@ -37,6 +37,12 @@ Pause u-boot in the stage 3 bootloader and tftpboot the generated kernel.
 
 The rootfs can be on nfs or a SATA hdd if connected.
 
+## SEAD3
+
+Pause u-boot and tftpboot the generated kernel.
+
+The rootfs can be on nfs or a peripheral
+
 ## QEMU
 
 

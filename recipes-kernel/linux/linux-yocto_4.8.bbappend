@@ -125,3 +125,8 @@ COMPATIBLE_MACHINE_utm8		= "utm8"
 KBUILD_DEFCONFIG_utm8el		= "cavium_octeon_defconfig"
 KBUILD_DEFCONFIG_utm8		= "cavium_octeon_defconfig"
 SRC_URI_append_utm8el		+= "file://mips64r2el.cfg"
+
+# sead3_32r6el
+COMPATIBLE_MACHINE_sead3-32r6el	= "sead3-32r6el"
+KBUILD_DEFCONFIG_sead3-32r6el	= "sead3_defconfig"
+SRC_URI_append_sead3-32r6el	+= "file://mips32r6el.cfg"
