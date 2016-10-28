@@ -39,11 +39,11 @@ For more information, see https://community.imgtec.com/developers/mips/resources
 
 ### Additional documentation
 
-[Building Machines](README.building.md)	Notes on how to build various machines
+[Building Machines](docs/README.building.md)	Notes on how to build various machines
 
-[Booting Machines](README.booting.md)	Notes on how to boot the various machines such as Ci40, xilfpga etc.
+[Booting Machines](docs/README.booting.md)	Notes on how to boot the various machines such as Ci40, xilfpga etc.
 
-[Using QEMU](README.qemu.md)		Notes on how to use qemu with the various configurations
+[Using QEMU](docs/README.qemu.md)		Notes on how to use qemu with the various configurations
 
 ---
 
