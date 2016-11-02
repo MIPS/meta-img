@@ -14,6 +14,7 @@ S = "${WORKDIR}/git"
 COMPATIBLE_MACHINE = "ci40"
 UBOOT_MACHINE = "pistachio_marduk_defconfig"
 SRCREV_pn-u-boot = "ae138751b3234885d4cc8ecb0eea9f1811ff48c8"
+LICENSE = "GPLv2+"
 LIC_FILES_CHKSUM = "file://README;beginline=1;endline=6;md5=157ab8408beab40cd8ce1dc69f702a6c"
 
 #UBOOT_IMAGE = "u-boot-pistachio-nor.img"
