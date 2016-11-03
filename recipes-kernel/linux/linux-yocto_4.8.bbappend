@@ -103,7 +103,7 @@ KBUILD_DEFCONFIG_qemumips32r6el-nf	= "malta_defconfig"
 SRC_URI_append_qemumips32r6el		+= "file://mips32r6el.cfg"
 SRC_URI_append_qemumips32r6el-nf	+= "file://mips32r6el.cfg"
 
-# mips32r6
+# mips64r6
 COMPATIBLE_MACHINE_qemumips64r6		= "qemumips64r6"
 COMPATIBLE_MACHINE_qemumips64r6-nf	= "qemumips64r6-nf"
 KBUILD_DEFCONFIG_qemumips64r6		= "malta_defconfig"
@@ -118,6 +118,22 @@ KBUILD_DEFCONFIG_qemumips64r6el		= "malta_defconfig"
 KBUILD_DEFCONFIG_qemumips64r6el-nf	= "malta_defconfig"
 SRC_URI_append_qemumips64r6el		+= "file://mips64r6el.cfg"
 SRC_URI_append_qemumips64r6el-nf	+= "file://mips64r6el.cfg"
+
+# mips64r6-n32
+COMPATIBLE_MACHINE_qemumips64r6-n32	= "qemumips64r6-n32"
+COMPATIBLE_MACHINE_qemumips64r6-nf-n32	= "qemumips64r6-nf-n32"
+KBUILD_DEFCONFIG_qemumips64r6-n32	= "malta_defconfig"
+KBUILD_DEFCONFIG_qemumips64r6-nf-n32	= "malta_defconfig"
+SRC_URI_append_qemumips64r6-n32		+= "file://mips64r6.cfg"
+SRC_URI_append_qemumips64r6-nf-n32	+= "file://mips64r6.cfg"
+
+# mips64r6el-n32
+COMPATIBLE_MACHINE_qemumips64r6el-n32		= "qemumips64r6el-n32"
+COMPATIBLE_MACHINE_qemumips64r6el-nf-n32	= "qemumips64r6el-nf-n32"
+KBUILD_DEFCONFIG_qemumips64r6el-n32		= "malta_defconfig"
+KBUILD_DEFCONFIG_qemumips64r6el-nf-n32		= "malta_defconfig"
+SRC_URI_append_qemumips64r6el-n32		+= "file://mips64r6el.cfg"
+SRC_URI_append_qemumips64r6el-nf-n32		+= "file://mips64r6el.cfg"
 
 # utm8
 COMPATIBLE_MACHINE_utm8el	= "utm8el"
