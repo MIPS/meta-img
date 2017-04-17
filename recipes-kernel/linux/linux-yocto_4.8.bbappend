@@ -7,6 +7,9 @@ SRC_URI += "file://modules.cfg \
 	   "
 
 SRC_URI_append_xilfpga += "\
+	file://0001-xilfpga-intc.patch \
+	file://0002-xilfpga-ethernet-kconfig.patch \
+	file://0003-xilfpga-dts.patch \
 	file://xilfpga-cmdline.cfg \
 	file://xilfpga-periph.cfg \
 	file://xilfpga-rtc.cfg \
