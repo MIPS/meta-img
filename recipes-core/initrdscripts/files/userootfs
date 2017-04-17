@@ -9,5 +9,5 @@ userootfs_run() {
 		info "Unsetting ROOTFS_DIR"
 		unset ROOTFS_DIR
 	fi
-	exec sh
+	exec /sbin/init
 }
