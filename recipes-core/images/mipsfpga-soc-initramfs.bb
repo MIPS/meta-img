@@ -11,3 +11,7 @@ PACKAGE_INSTALL += "\
 	initramfs-module-use-rootfs \
 	"
 BAD_RECOMMENDATIONS += "initramfs-module-rootfs"
+
+IMAGE_EXTRA_INSTALL += "\
+	simple-gpio \
+"
