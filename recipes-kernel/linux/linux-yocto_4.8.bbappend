@@ -7,8 +7,9 @@ SRC_URI += "file://modules.cfg \
 	   "
 
 SRC_URI_append_xilfpga += "\
-	file://xilfpga-initrd.cfg \
 	file://xilfpga-cmdline.cfg \
+	file://xilfpga-periph.cfg \
+	file://xilfpga-rtc.cfg \
 	"
 
 # replace these SRCREVs with the real commit ids once you've had
