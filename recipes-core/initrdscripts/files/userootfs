@@ -1,0 +1,13 @@
+#!/bin/sh
+
+userootfs_enabled() {
+	return 0
+}
+
+userootfs_run() {
+	if [ -n "$ROOTFS_DIR" ]; then
+		info "Unsetting ROOTFS_DIR"
+		unset ROOTFS_DIR
+	fi
+	exec sh
+}
