@@ -13,5 +13,6 @@ PACKAGE_INSTALL += "\
 BAD_RECOMMENDATIONS += "initramfs-module-rootfs"
 
 CORE_IMAGE_EXTRA_INSTALL += "\
+	devmem2 \
 	simple-gpio \
 "
