@@ -17,7 +17,7 @@
 +	};
 +
 +	axi_ethernetlite: ethernet@10e00000 {
-+		compatible = "xlnx,xps-ethernetlite-3.00.a";
++		compatible = "xlnx,axi-ethernetlite-3.0", "xlnx,xps-ethernetlite-1.00.a";
 +		device_type = "network";
 +		interrupt-parent = <&axi_intc>;
 +		interrupts = <1>;
