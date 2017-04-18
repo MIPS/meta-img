@@ -1,7 +1,7 @@
 SUMMARY = "Simple GPIO control example"
 LICENSE = "CLOSED"
+
 COMPATIBLE_MACHINE = "xilfpga"
-DEPENDS = "libfdc"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
@@ -12,7 +12,7 @@ S = "${WORKDIR}"
 do_configure[noexec] = "1"
 
 do_compile() {
-    ${CC} simple_gpio_on.c -o simple_gpio_on
+    ${CC}  ${CFLAGS} ${LDFLAGS} simple_gpio_on.c -o simple_gpio_on
 }
 
 do_install() {
