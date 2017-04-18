@@ -14,5 +14,6 @@ BAD_RECOMMENDATIONS += "initramfs-module-rootfs"
 
 CORE_IMAGE_EXTRA_INSTALL += "\
 	devmem2 \
+	i2c-tools \
 	simple-gpio \
 "
