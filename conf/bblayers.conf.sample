@@ -1,0 +1,10 @@
+POKY_BBLAYERS_CONF_VERSION = "2"
+BBPATH = "${TOPDIR}"
+BBFILES ?= ""
+BBLAYERS ?= " \
+  ##COREBASE##/meta \
+  ##COREBASE##/meta-poky \
+  ##COREBASE##/meta-yocto-bsp \
+  ##COREBASE##/meta-openembedded/meta-oe \
+  ##COREBASE##/meta-img \
+  "

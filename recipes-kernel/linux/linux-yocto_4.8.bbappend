@@ -6,6 +6,15 @@ SRC_URI += "file://modules.cfg \
 	    file://tracepoints.cfg \
 	   "
 
+SRC_URI_append_xilfpga += "\
+	file://0001-xilfpga-intc.patch \
+	file://0002-xilfpga-ethernet-kconfig.patch \
+	file://0003-xilfpga-dts.patch \
+	file://xilfpga-cmdline.cfg \
+	file://xilfpga-periph.cfg \
+	file://xilfpga-rtc.cfg \
+	"
+
 # replace these SRCREVs with the real commit ids once you've had
 # the appropriate changes committed to the upstream linux-yocto repo
 #SRCREV_machine_pn-linux-yocto ?= "${AUTOREV}"
