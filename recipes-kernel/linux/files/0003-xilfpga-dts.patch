@@ -1,0 +1,98 @@
+--- git/arch/mips/boot/dts/xilfpga/nexys4ddr.dts	2017-04-17 11:24:20.389042376 -0400
++++ git.patched/arch/mips/boot/dts/xilfpga/nexys4ddr.dts	2017-04-17 11:45:35.831517603 -0400
+@@ -17,6 +17,48 @@
+ 		compatible = "mti,cpu-interrupt-controller";
+ 	};
+ 
++	axi_intc: interrupt-controller@10200000 {
++		#interrupt-cells = <1>;
++		compatible = "xlnx,xps-intc-1.00.a";
++		interrupt-controller;
++		reg = <0x10200000 0x10000>;
++		xlnx,kind-of-intr = <0x0>;
++		xlnx,num-intr-inputs = <0x6>;
++
++		interrupt-parent = <&cpuintc>;
++		interrupts = <6>;
++	};
++
++	axi_ethernetlite: ethernet@10e00000 {
++		compatible = "xlnx,axi-ethernetlite-3.0", "xlnx,xps-ethernetlite-1.00.a";
++		device_type = "network";
++		interrupt-parent = <&axi_intc>;
++		interrupts = <1>;
++		local-mac-address = [08 86 4C 0D F7 09];
++		phy-handle = <&phy0>;
++		reg = <0x10e00000 0x10000>;
++		xlnx,duplex = <0x1>;
++		xlnx,include-global-buffers = <0x1>;
++		xlnx,include-internal-loopback = <0x0>;
++		xlnx,include-mdio = <0x1>;
++		xlnx,instance = "axi_ethernetlite_inst";
++		xlnx,rx-ping-pong = <0x1>;
++		xlnx,s-axi-id-width = <0x1>;
++		xlnx,tx-ping-pong = <0x1>;
++		xlnx,use-internal = <0x0>;
++		mdio {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			phy0: phy@1 {
++				compatible = <0x0007c0f0 0xfffffff0>;
++				device_type = "ethernet-phy";
++				interrupt-parent = <&axi_intc>;
++				interrupts = <2>;
++				reg = <1>;
++			};
++		};
++	};
++
+ 	axi_gpio: gpio@10600000 {
+ 		#gpio-cells = <1>;
+ 		compatible = "xlnx,xps-gpio-1.00.a";
+@@ -28,7 +70,36 @@
+ 		xlnx,interrupt-present = <0x0>;
+ 		xlnx,is-dual = <0x0>;
+ 		xlnx,tri-default = <0xffffffff>;
+-	} ;
++ 
++		interrupt-parent = <&axi_intc>;
++		interrupts = <0>;
++	};
++
++	axi_i2c: i2c@10A00000 {
++		compatible = "xlnx,xps-iic-2.00.a";
++		interrupt-parent = <&axi_intc>;
++		interrupts = <4>;
++		reg = < 0x10A00000 0x10000 >;
++		xlnx,clk-freq = <0x5f5e100>;
++		xlnx,family = "Artix7";
++		xlnx,gpo-width = <0x1>;
++		xlnx,iic-freq = <0x186a0>;
++		xlnx,scl-inertial-delay = <0x0>;
++		xlnx,sda-inertial-delay = <0x0>;
++		xlnx,ten-bit-adr = <0x0>;
++		#address-cells = <1>;
++		#size-cells = <0>;
++	 	clocks = <&ext>;
++		ad7420@4B {
++			compatible = "adt7420";
++			reg = <0x4B>;
++		};
++	};
++
++	custom_axi_gpio: user_gpio@10C00000 {
++		compatible = "generic-uio" , "uio";
++		reg = < 0x10C00000 0x1000>;
++	}; 
+ 
+ 	axi_uart16550: serial@10400000 {
+ 		compatible = "ns16550a";
+@@ -37,7 +108,7 @@
+ 		reg-shift = <2>;
+ 		reg-offset = <0x1000>;
+ 
+-		clocks	= <&ext>;
++		clocks  = <&ext>;
+ 	};
+ };
+ 
