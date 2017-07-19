@@ -10,3 +10,9 @@ SERIAL_CONSOLES = "115200;ttyS0 115200;ttyS1"
 MACHINE_FEATURES_BACKFILL_CONSIDERED = "qemu-usermode"
 
 PREFERRED_PROVIDER_virtual/kernel ?= "linux-yocto"
+
+# Use GCC version 6
+GCCVERSION = "6.%"
+
+# Use qemu v2.9
+PREFERRED_PROVIDER_qemu = "qemu_2.9.0"
