@@ -1,0 +1,53 @@
+From 9a6b4348b1f206171cf7f521b7c68ea1243857cc Mon Sep 17 00:00:00 2001
+From: Matt Redfearn <matt.redfearn@imgtec.com>
+Date: Tue, 21 Mar 2017 14:39:19 +0000
+Subject: [PATCH] MIPS: smp-cps: Fix retrieval of VPE mask on big endian CPUs
+
+The vpe_mask member of struct core_boot_config is of type atomic_t,
+which is a 32bit type. In cps-vec.S this member was being retrieved by a
+PTR_L macro, which on 64bit systems is a 64bit load. On little endian
+systems this is OK, since the double word that is retrieved will have
+the required less significant word in the correct position. However, on
+big endian systems the less significant word of the load is retrieved
+from address+4, and the more significant from address+0. The destination
+register therefore ends up with the required word in the more
+significant word
+e.g. when starting the second VP of a big endian 64bit system, the load
+
+PTR_L    ta2, COREBOOTCFG_VPEMASK(a0)
+
+ends up setting register ta2 to 0x0000000300000000
+
+When this value is written to the CPC it is ignored, since it is
+invalid to write anything larger than 4 bits. This results in any VP
+other than VP0 in a core failing to start in 64bit big endian systems.
+
+Change the load to a 32bit load word instruction to fix the bug.
+
+Fixes: f12401d7219f ("MIPS: smp-cps: Pull boot config retrieval out of mips_cps_boot_vpes")
+Signed-off-by: Matt Redfearn <matt.redfearn@imgtec.com>
+Cc: Paul Burton <paul.burton@imgtec.com>
+Cc: linux-mips@linux-mips.org
+Cc: linux-kernel@vger.kernel.org
+Patchwork: https://patchwork.linux-mips.org/patch/15787/
+Signed-off-by: Ralf Baechle <ralf@linux-mips.org>
+---
+ arch/mips/kernel/cps-vec.S | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/mips/kernel/cps-vec.S b/arch/mips/kernel/cps-vec.S
+index 59476a6..a00e87b 100644
+--- a/arch/mips/kernel/cps-vec.S
++++ b/arch/mips/kernel/cps-vec.S
+@@ -361,7 +361,7 @@ LEAF(mips_cps_get_bootcfg)
+ 	END(mips_cps_get_bootcfg)
+ 
+ LEAF(mips_cps_boot_vpes)
+-	PTR_L	ta2, COREBOOTCFG_VPEMASK(a0)
++	lw	ta2, COREBOOTCFG_VPEMASK(a0)
+ 	PTR_L	ta3, COREBOOTCFG_VPECONFIG(a0)
+ 
+ #if defined(CONFIG_CPU_MIPSR6)
+-- 
+2.10.2
+

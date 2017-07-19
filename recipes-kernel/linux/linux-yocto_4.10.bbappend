@@ -4,7 +4,9 @@ PR := "${PR}.1"
 
 SRC_URI += "file://modules.cfg \
 	    file://tracepoints.cfg \
-	   "
+	    file://0001-MIPS-smp-cps-Fix-retrieval-of-VPE-mask-on-big-endian.patch \
+	    file://0001-HACK-MIPS-Disable-R4K_SYNC.patch \
+	"
 
 # replace these SRCREVs with the real commit ids once you've had
 # the appropriate changes committed to the upstream linux-yocto repo
