@@ -10,14 +10,14 @@ SRC_URI += "file://modules.cfg \
 # the appropriate changes committed to the upstream linux-yocto repo
 #SRCREV_machine_pn-linux-yocto ?= "${AUTOREV}"
 #SRCREV_meta_pn-linux-yocto ?= "${AUTOREV}"
-#LINUX_VERSION = "4.8"
+#LINUX_VERSION = "4.15"
 
 # Configuration for Xilfpga platform
 
 KBUILD_DEFCONFIG_xilfpga = "xilfpga_defconfig"
 COMPATIBLE_MACHINE_xilfpga = "xilfpga"
 
-# We use kernel defconfigs where everything unmarked defaults to Y but 
+# We use kernel defconfigs where everything unmarked defaults to Y but
 # Yocto defaults to allnoconfig. This parameters makes them usable in yocto
 KCONFIG_MODE = "--alldefconfig"
 
